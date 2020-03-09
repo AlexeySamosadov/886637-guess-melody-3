@@ -24,10 +24,7 @@ class App extends PureComponent {
     const {errorsCount, questions} = this.props;
     const {step} = this.state;
 
-    const generator = gen
-    if (step > 0) {
-      question = questions[step];
-    }
+    const question = questions[step];
 
     if (step === -1 || step >= questions.length) {
       return (
