@@ -6,14 +6,12 @@ import {GameType} from "../../const.js";
 export default class GenreQuestionScreen extends PureComponent {
   constructor(props) {
     super(props);
-    console.log(`Отработал конструктор`,props);
     this.state = {
       answers: [false, false, false, false],
     };
   }
 
   render() {
-    console.log(`Отработал метод render компонента Жанр`);
     const {onAnswer, question} = this.props;
     const {answers: userAnswers} = this.state;
     const {answers} = question;

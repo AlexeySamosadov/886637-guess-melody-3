@@ -5,6 +5,7 @@ import {Switch, Route, BrowserRouter} from "react-router-dom";
 import ArtistQuestionScreen from "../artist-question-screen/artist-question-screen.jsx";
 import GenreQuestionScreen from "../genre-question-screen/genre-question-screen.jsx";
 import {GameType} from "../../const.js";
+import {getTextFromNode} from "enzyme/src/RSTTraversal";
 
 const testWelcome = () => {
   // eslint-disable-next-line no-alert
@@ -14,18 +15,19 @@ const testWelcome = () => {
 class App extends PureComponent {
   constructor(props) {
     super(props);
-
     this.state = {
       step: -1,
     };
   }
 
   _renderGameScreen() {
-    console.log(`Начал отрабатывать компонент _renderGameScreen()`);
-    console.log(`this.state`, this.state);
     const {errorsCount, questions} = this.props;
     const {step} = this.state;
-    const question = questions[step];
+
+    const generator = gen
+    if (step > 0) {
+      question = questions[step];
+    }
 
     if (step === -1 || step >= questions.length) {
       return (
@@ -43,7 +45,6 @@ class App extends PureComponent {
     if (question) {
       switch (question.type) {
         case GameType.GENRE:
-          console.log(`Начал отрабатывать компонент Жанр`);
           return (
             <GenreQuestionScreen
               question= {question}
@@ -55,7 +56,6 @@ class App extends PureComponent {
             />
           );
         case GameType.ARTIST:
-          console.log(`отработал Компонент Артист`);
           return (
             <ArtistQuestionScreen
               question={question}
@@ -74,8 +74,6 @@ class App extends PureComponent {
 
   render() {
     const {errorsCount, questions} = this.props;
-    console.log(`Начал отрабатывать компонент Render`);
-    console.log(`this.state`, this.state);
     return (
       <BrowserRouter>
         <Switch>
