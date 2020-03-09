@@ -13,7 +13,7 @@ export default class GenreQuestionScreen extends PureComponent {
   }
 
   render() {
-    Console.log(`Отработал метод render компонента Жанр`);
+    console.log(`Отработал метод render компонента Жанр`);
     const {onAnswer, question} = this.props;
     const {answers: userAnswers} = this.state;
     const {answers} = question;
@@ -26,9 +26,20 @@ export default class GenreQuestionScreen extends PureComponent {
             <img className="game__logo" src="img/melody-logo-ginger.png" alt="Угадай мелодию"/>
           </a>
 
-          <svg xmlns="http://www.w3.org/2000/svg" className="timer" viewBox="0 0 780 780"/>
-          <circle className="timer__line" cx="390" cy="390" r="370"
-            style="filter: url(#blur); transform: rotate(-90deg) scaleY(-1); transform-origin: center"/>
+          <svg xmlns="http://www.w3.org/2000/svg" className="timer" viewBox="0 0 780 780">
+            <circle className="timer__line" cx="390" cy="390" r="370"
+              style={{
+                filter: `url(#blur)`,
+                transform: `rotate(-90deg) scaleY(-1)`,
+                transformOrigin: `center`
+              }}
+            />
+          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" className="timer" viewBox="0 0 780 780">
+            <circle className="timer__line" cx="390" cy="390" r="370"
+              style={{filter: `url(#blur)`, transform: `rotate(-90deg) scaleY(-1)`, transformOrigin: `center`}}/>
+          </svg>
 
           <div className="game__mistakes">
             <div className="wrong"/>
