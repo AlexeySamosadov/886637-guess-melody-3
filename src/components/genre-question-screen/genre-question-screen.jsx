@@ -3,19 +3,20 @@ import PropTypes from "prop-types";
 import {GameType} from "../../const.js";
 
 
-class GenreQuestionScreen extends PureComponent {
+export default class GenreQuestionScreen extends PureComponent {
   constructor(props) {
     super(props);
-
+    console.log(props);
     this.state = {
       answers: [false, false, false, false],
     };
   }
 
   render() {
+    Console.log(`Отработал метод render компонента Жанр`);
     const {onAnswer, question} = this.props;
     const {answers: userAnswers} = this.state;
-    const {answers, genre} = question;
+    const {answers} = question;
 
     return (
       <section className="game game--genre">
@@ -25,15 +26,14 @@ class GenreQuestionScreen extends PureComponent {
             <img className="game__logo" src="img/melody-logo-ginger.png" alt="Угадай мелодию"/>
           </a>
 
-          <svg xmlns="http://www.w3.org/2000/svg" className="timer" viewBox="0 0 780 780">
-            <circle className="timer__line" cx="390" cy="390" r="370"
-              style="filter: url(#blur); transform: rotate(-90deg) scaleY(-1); transform-origin: center"/>
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" className="timer" viewBox="0 0 780 780"/>
+          <circle className="timer__line" cx="390" cy="390" r="370"
+            style="filter: url(#blur); transform: rotate(-90deg) scaleY(-1); transform-origin: center"/>
 
           <div className="game__mistakes">
-            <div className="wrong"></div>
-            <div className="wrong"></div>
-            <div className="wrong"></div>
+            <div className="wrong"/>
+            <div className="wrong"/>
+            <div className="wrong"/>
           </div>
         </header>
 
@@ -49,7 +49,7 @@ class GenreQuestionScreen extends PureComponent {
 
             {answers.map((answer, i)=> (
               <div key={`${i}-${answer.src}`} className="track">
-                <button className="track__button track__button--play" type="button"></button>
+                <button className="track__button track__button--play" type="button"/>
                 <div className="track__status">
                   <audio>
                     src={answer.src}
@@ -83,7 +83,7 @@ class GenreQuestionScreen extends PureComponent {
 
 GenreQuestionScreen.propTypes = {
   onAnswer: PropTypes.func.isRequired,
-  questions: PropTypes.shape({
+  question: PropTypes.shape({
     type: PropTypes.oneOf([GameType.ARTIST, GameType.GENRE]).isRequired,
     genre: PropTypes.string.isRequired,
     answers: PropTypes.arrayOf(PropTypes.shape({
