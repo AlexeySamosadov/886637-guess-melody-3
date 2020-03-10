@@ -14,9 +14,7 @@ export default class GenreQuestionScreen extends PureComponent {
   render() {
     const {onAnswer, question} = this.props;
     const {answers: userAnswers} = this.state;
-    console.log(`question`, question);
     const {answers} = question;
-    console.log(`answers`, answers);
 
     return (
       <section className="game game--genre">
