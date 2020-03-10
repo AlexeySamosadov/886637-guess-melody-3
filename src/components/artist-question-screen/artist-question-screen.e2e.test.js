@@ -44,7 +44,11 @@ it(`Click on user answer should pass to the callback data-object
     picture: `pic-one`,
   };
 
-  const screen = shallow(<ArtistQuestionScreen onAnswer={onAnswer} question={userAnswer}/>);
+  const screen = shallow(
+      <ArtistQuestionScreen
+        onAnswer={onAnswer}
+        question={question}/>
+  );
 
   const answerInputs = screen.find(`input`);
   const answerOne = answerInputs.at(0);

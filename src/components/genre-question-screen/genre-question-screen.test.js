@@ -23,7 +23,7 @@ const question = {
 it(`GenreQuestionScreen is rendered correctly`, () => {
   const tree = renderer.create((
     <GenreQuestionScreen
-      questions={question}
+      question={question}
       onAnswer={()=> {}}
     />
   ), {

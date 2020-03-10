@@ -5,7 +5,7 @@ import {Switch, Route, BrowserRouter} from "react-router-dom";
 import ArtistQuestionScreen from "../artist-question-screen/artist-question-screen.jsx";
 import GenreQuestionScreen from "../genre-question-screen/genre-question-screen.jsx";
 import {GameType} from "../../const.js";
-import {getTextFromNode} from "enzyme/src/RSTTraversal";
+// import {getTextFromNode} from "enzyme/src/RSTTraversal";
 
 const testWelcome = () => {
   // eslint-disable-next-line no-alert
