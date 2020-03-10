@@ -7,6 +7,7 @@ it(`I text welcome screen wati whant`, () => {
     .create(
         <WelcomeScreen
           errorsCount={3}
+          onWelcomeButtonClick={() => {}}
         />
     )
     .toJSON();
